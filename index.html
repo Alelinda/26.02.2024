@@ -13,17 +13,42 @@
 </head>
 
 <body>
+    
 
     <div id="mydiv"></div>
 
     <script type="text/babel">
-        function Hello() {
-            return <h1>Hello World!</h1>;
+        //objeto <Hello/>
+        function Hello() { //via função tem que retornar
+            return <h1>Hello World</h1>;
         }
+        function Nome() { //via função tem que retornar
+            return <h2>Ale Linda</h2>;
+        }
+
+        function Sobrenome() { //via função tem que retornar
+            return <h2> Beautiful!</h2>;
+        }
+
+        function Endereco() { //via função tem que retornar
+            return <h2>Rua Bolinho de Arroz, 567</h2>;
+        }
+        const Hello2 =( //via variável que tem um obj para retornar depois 
+            <h2>Hello 2</h2>
+        );
 
         const container = document.getElementById('mydiv');
         const root = ReactDOM.createRoot(container);
-        root.render(<Hello />)
+
+        root.render(
+            <React.StrictMode>
+                <Hello />
+                <Sobrenome />
+                <Endereco />
+                <Nome />
+            </React.StrictMode>); // renderizar via objeto (retornável de função)
+        //root.render(Hello2); // renderizar via variável (contém o objeto a ser renderizado)
+        //root.render(<h1>Teste</h1>);//renderização direto no renderizador 
     </script>
 
 </body>
